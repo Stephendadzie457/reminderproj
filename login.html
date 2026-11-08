@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>TaskFlow - Sign in</title>
+    <meta name="description" content="Sign in or create your free TaskFlow workspace." />
+    <meta name="theme-color" content="#c2410c" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body data-view="form" data-mode="signin">
+    <noscript
+      ><p class="nojs">
+        TaskFlow needs JavaScript to sign you in. Please turn it on and reload.
+      </p></noscript
+    >
+
+    <div class="stage">
+      <!-- Illustrated panel: the full-screen welcome on phones, the left half on desktop -->
+      <section class="art-pane" aria-label="Welcome to TaskFlow">
+        <svg
+          class="art"
+          viewBox="0 0 420 860"
+          preserveAspectRatio="xMidYMin slice"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <linearGradient id="bg" x1="0.1" y1="0" x2="0.7" y2="1">
+              <stop offset="0" stop-color="#fdba74" />
+              <stop offset="0.22" stop-color="#f97316" />
+              <stop offset="0.5" stop-color="#ea580c" />
+              <stop offset="0.74" stop-color="#c2410c" />
+              <stop offset="1" stop-color="#7c2d12" />
+            </linearGradient>
+            <radialGradient id="glass" cx="0.3" cy="0.26" r="0.8">
+              <stop offset="0" stop-color="#fffaf3" />
+              <stop offset="0.3" stop-color="#fed7aa" />
+              <stop offset="0.66" stop-color="#fb923c" />
+              <stop offset="1" stop-color="#c2410c" />
+            </radialGradient>
+            <radialGradient id="ink" cx="0.3" cy="0.26" r="0.85">
+              <stop offset="0" stop-color="#7a5238" />
+              <stop offset="0.5" stop-color="#2b1409" />
+              <stop offset="1" stop-color="#0d0603" />
+            </radialGradient>
+            <linearGradient id="milk" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.96" />
+              <stop offset="1" stop-color="#ffedd5" stop-opacity="0.55" />
+            </linearGradient>
+            <linearGradient id="wave" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.2" />
+              <stop offset="1" stop-color="#ffffff" stop-opacity="0.02" />
+            </linearGradient>
+          </defs>
+          <rect width="420" height="860" fill="url(#bg)" />
+          <path d="M-30 330C80 240 170 390 250 330S410 250 470 340V900H-30Z" fill="url(#wave)" />
+          <path
+            d="M-30 520C60 470 140 560 230 520S400 470 470 540V900H-30Z"
+            fill="#7c2d12"
+            opacity="0.35"
+          />
+          <path
+            d="M250-30C300 40 420 20 470-10V190C400 215 330 185 300 130C268 85 228 30 250-30Z"
+            fill="url(#milk)"
+          />
+          <g class="float f1"><circle cx="40" cy="36" r="86" fill="url(#ink)" /></g>
+          <g class="float f2"><circle cx="332" cy="120" r="46" fill="url(#glass)" /></g>
+          <g class="float f3"><circle cx="368" cy="214" r="28" fill="url(#glass)" /></g>
+          <g class="float f4"><circle cx="70" cy="660" r="32" fill="url(#glass)" /></g>
+          <g class="float f5"><circle cx="190" cy="770" r="76" fill="url(#ink)" /></g>
+        </svg>
+
+        <a class="back" id="back" href="index.html"
+          ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>Back</a
+        >
+
+        <a class="brand" href="index.html" tabindex="-1">
+          <i
+            ><svg viewBox="0 0 24 24" fill="#fff" stroke="none" aria-hidden="true">
+              <path d="M13 2 4 14h7l-1 8 9-12h-7z" /></svg></i
+          >TaskFlow
+        </a>
+
+        <div class="pitch">
+          <h1 id="pitch-title">Welcome <em>back!</em></h1>
+          <p>Your tasks, notes, calendar and focus time, in one calm workspace.</p>
+        </div>
+
+        <nav class="intro-tabs" aria-label="Choose how to continue">
+          <button type="button" id="goin">Sign in</button>
+          <button type="button" id="goup">Sign up</button>
+        </nav>
+      </section>
+
+      <!-- The form card: slides up over the artwork on phones -->
+      <main class="sheet" id="sheet">
+        <div class="card">
+          <h2 id="title">Welcome back</h2>
+          <p class="lede" id="lede">Sign in to open your workspace.</p>
+
+          <form id="form" novalidate>
+            <div class="field" id="f-name" data-for="name" hidden>
+              <label for="name">Full name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Enter your full name" />
+            </div>
+
+            <div class="field" id="f-email" data-for="email">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="field has-eye" id="f-password" data-for="password">
+              <label for="password" id="password-label">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+              />
+              <button
+                class="eye"
+                id="eye"
+                type="button"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <g id="eye-open">
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </g>
+                  <g id="eye-shut" hidden>
+                    <path d="M3 3l18 18" />
+                    <path
+                      d="M10.6 5.1A9.9 9.9 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.2M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a9.7 9.7 0 0 0 4.4-1"
+                    />
+                    <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+
+            <div class="meter" id="meter" data-score="0" hidden aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <p class="hint" id="hint" hidden aria-live="polite"></p>
+
+            <div class="row" id="row-signin">
+              <label class="check"
+                ><input type="checkbox" id="remember" checked /><span
+                  class="box"
+                  aria-hidden="true"
+                ></span
+                >Remember me</label
+              >
+              <button
+                class="link"
+                id="forgot"
+                type="button"
+                aria-expanded="false"
+                aria-controls="forgot-note"
+              >
+                Forgot password?
+              </button>
+            </div>
+            <p class="note" id="forgot-note" hidden>
+              Password reset by email arrives with cloud accounts. Until then you can create a new
+              account with another email, or continue as a guest.
+            </p>
+
+            <div class="row" id="row-signup" hidden>
+              <label class="check" id="f-agree" data-for="agree"
+                ><input type="checkbox" id="agree" checked /><span
+                  class="box"
+                  aria-hidden="true"
+                ></span
+                ><span
+                  >I agree to the
+                  <a href="index.html#privacy" target="_blank" rel="noopener"
+                    >privacy notice</a
+                  ></span
+                ></label
+              >
+            </div>
+
+            <div class="note" id="info" role="status" hidden></div>
+            <div class="alert" id="alert" role="alert" hidden></div>
+
+            <button class="submit" id="submit" type="submit">
+              <span class="spin" aria-hidden="true"></span><span id="submit-label">Sign in</span>
+            </button>
+          </form>
+
+          <div class="divider" id="divider"><span>or</span></div>
+
+          <div class="social">
+            <a class="soc" href="app.html?guest=1">
+              <svg class="guest-i" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="4.2" />
+                <path d="M4 21c.9-4 4-6 8-6s7.1 2 8 6" />
+              </svg>
+              Continue as guest
+            </a>
+          </div>
+
+          <p class="switch">
+            <span id="switch-text">Don't have an account?</span>
+            <button class="link" id="switch" type="button">Sign up</button>
+          </p>
+
+          <p class="legal">
+            <a href="index.html#privacy">Privacy</a> &middot;
+            <a href="index.html#faq">FAQ</a> &middot; &copy; <span id="year">2026</span> TaskFlow
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script src="vendor/supabase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cloud.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

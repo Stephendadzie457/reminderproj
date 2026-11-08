@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>TaskFlow - Plan, write and focus in one place</title>
+    <meta
+      name="description"
+      content="Tasks, notes, calendar, whiteboard, focus timer and full history in one workspace."
+    />
+    <meta name="theme-color" content="#F97316" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <script>
+      document.documentElement.className = "js";
+    </script>
+    <link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+        </symbol>
+        <symbol id="i-home" viewBox="0 0 24 24">
+          <path d="M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="m8 12 3 3 5-6" />
+        </symbol>
+        <symbol id="i-note" viewBox="0 0 24 24">
+          <path d="M6 3h9l4 4v14H6z" />
+          <path d="M14 3v5h5M9 13h7M9 17h5" />
+        </symbol>
+        <symbol id="i-cal" viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="16" rx="3" />
+          <path d="M3 10h18M8 3v4M16 3v4" />
+        </symbol>
+        <symbol id="i-pen" viewBox="0 0 24 24">
+          <path d="m4 20 1-4L16 5l3 3L8 19z" />
+          <path d="m14 7 3 3" />
+        </symbol>
+        <symbol id="i-timer" viewBox="0 0 24 24">
+          <circle cx="12" cy="13" r="8" />
+          <path d="M12 9v4l2 2M9 2h6" />
+        </symbol>
+        <symbol id="i-hist" viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+          <path d="M3 3v5h5M12 7v5l3 2" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+          <rect x="7" y="2" width="10" height="20" rx="2.5" />
+          <path d="M11 18h2" />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="nav">
+      <div class="wrap">
+        <a class="logo" href="#top"
+          ><i
+            ><svg class="ico" fill="#fff" stroke="none">
+              <use href="#i-bolt" /></svg></i
+          >TaskFlow</a
+        >
+        <nav id="menu">
+          <a href="#features">Features</a><a href="#focus">Focus</a
+          ><a href="#history">History</a><a href="#privacy">Privacy</a
+          ><a href="#faq">FAQ</a>
+        </nav>
+        <span class="sp"></span>
+        <a class="btn hide" href="login.html?mode=signin">Sign in</a
+        ><a class="btn p" href="login.html?mode=signup">Get started</a
+        ><button class="burger" id="bg" aria-label="Menu">&#9776;</button>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <h1>Everything you plan, write and focus on. One calm workspace.</h1>
+          <p>
+            Tasks, notes, a calendar, a whiteboard and a full-screen focus
+            timer, with a complete history of what you got done.
+          </p>
+          <div class="cta">
+            <a class="btn p lg" href="login.html?mode=signup">Start free</a
+            ><a class="btn lg" href="app.html?guest=1"
+              >Try without an account</a
+            >
+          </div>
+          <div class="stage">
+            <div class="chip c1" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="44" height="44">
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="19"
+                  fill="none"
+                  stroke="#f1efea"
+                  stroke-width="5"
+                />
+                <circle
+                  class="ringd"
+                  cx="24"
+                  cy="24"
+                  r="19"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-dasharray="119.4"
+                  transform="rotate(-90 24 24)"
+                />
+              </svg>
+              <div><b>24:12</b><small>Focus session</small></div>
+            </div>
+            <div class="chip c2" aria-hidden="true">
+              <svg
+                viewBox="0 0 90 40"
+                width="80"
+                height="36"
+                fill="none"
+                stroke="#2563eb"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <path
+                  class="draw"
+                  pathLength="100"
+                  d="M4 30c10-26 18-26 22-8s12 14 20-4 14-16 22 6 12 8 18-6"
+                /></svg
+              ><small>Whiteboard</small>
+            </div>
+            <div class="chip c3" aria-hidden="true">
+              <span class="dot"></span>
+              <div><b>Tutorial session</b><small>Tomorrow, 4:00 PM</small></div>
+            </div>
+            <div class="mock" aria-hidden="true">
+              <aside>
+                <b class="on"
+                  ><svg class="ico"><use href="#i-home" /></svg>Home</b
+                ><b
+                  ><svg class="ico"><use href="#i-check" /></svg>Tasks</b
+                ><b
+                  ><svg class="ico"><use href="#i-note" /></svg>Notes</b
+                ><b
+                  ><svg class="ico"><use href="#i-cal" /></svg>Calendar</b
+                ><b
+                  ><svg class="ico"><use href="#i-pen" /></svg>Whiteboard</b
+                ><b
+                  ><svg class="ico"><use href="#i-timer" /></svg>Focus timer</b
+                ><b
+                  ><svg class="ico"><use href="#i-hist" /></svg>History</b
+                >
+              </aside>
+              <main>
+                <h3>This week</h3>
+                <div class="row">
+                  <span class="cb d"></span>Finish calculus tutorial sheet
+                </div>
+                <div class="row">
+                  <span class="cb d"></span>Restock FanMilk orders
+                </div>
+                <div class="row">
+                  <span class="cb auto"></span>Plan AMS tutorial session
+                </div>
+                <div class="row">
+                  <span class="cb"></span>Review project notes
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="features">
+        <div class="wrap">
+          <h2>All the tools, none of the clutter</h2>
+          <p class="lead">Six tools that work on their own and fit together.</p>
+          <div class="bento">
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <g class="s">
+                    <rect
+                      x="24"
+                      y="16"
+                      width="14"
+                      height="14"
+                      rx="4"
+                      class="f"
+                    />
+                    <path d="m27 23 3 3 5-6" class="w" />
+                    <path d="M48 23h110" />
+                    <rect
+                      x="24"
+                      y="46"
+                      width="14"
+                      height="14"
+                      rx="4"
+                      class="f"
+                    />
+                    <path d="m27 53 3 3 5-6" class="w" />
+                    <path d="M48 53h80" />
+                    <rect x="24" y="76" width="14" height="14" rx="4" />
+                    <path d="M48 83h120" />
+                  </g>
+                </svg>
+              </div>
+              <h3>Tasks</h3>
+              <p>
+                Add, prioritise, filter and tick off. Finished work stays on
+                record.
+              </p>
+            </article>
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <g class="s">
+                    <rect x="62" y="8" width="96" height="94" rx="8" />
+                    <path d="M78 28h40M78 46h64M78 58h58M78 70h44" />
+                    <path d="M78 28h40" class="th" />
+                  </g>
+                </svg>
+              </div>
+              <h3>Notes</h3>
+              <p>Pages with headings and lists that save as you type.</p>
+            </article>
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <g class="s">
+                    <rect x="40" y="10" width="140" height="92" rx="10" />
+                    <path d="M40 34h140" />
+                  </g>
+                  <g fill="#d6d2c7">
+                    <circle cx="64" cy="54" r="3" />
+                    <circle cx="90" cy="54" r="3" />
+                    <circle cx="116" cy="54" r="3" />
+                    <circle cx="142" cy="54" r="3" />
+                    <circle cx="64" cy="80" r="3" />
+                    <circle cx="90" cy="80" r="3" />
+                    <circle cx="142" cy="80" r="3" />
+                  </g>
+                  <circle cx="116" cy="80" r="9" fill="#F97316" />
+                </svg>
+              </div>
+              <h3>Calendar</h3>
+              <p>A clear month view with events and deadlines on every day.</p>
+            </article>
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <path
+                    class="draw"
+                    pathLength="100"
+                    d="M26 78c14-52 30-52 38-16s22 26 38-8 28-30 44 12 24 14 48-14"
+                    fill="none"
+                    stroke="#2563eb"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                  <circle
+                    cx="190"
+                    cy="34"
+                    r="8"
+                    fill="none"
+                    stroke="#F97316"
+                    stroke-width="4"
+                  />
+                </svg>
+              </div>
+              <h3>Whiteboard</h3>
+              <p>
+                Sketch with pen, colours and eraser. Works with touch and
+                stylus.
+              </p>
+            </article>
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <circle
+                    cx="110"
+                    cy="55"
+                    r="38"
+                    fill="none"
+                    stroke="#f1efea"
+                    stroke-width="9"
+                  />
+                  <circle
+                    class="ringd"
+                    cx="110"
+                    cy="55"
+                    r="38"
+                    fill="none"
+                    stroke="#F97316"
+                    stroke-width="9"
+                    stroke-linecap="round"
+                    stroke-dasharray="238.8"
+                    transform="rotate(-90 110 55)"
+                  />
+                  <path d="M110 38v18l10 8" class="s" />
+                </svg>
+              </div>
+              <h3>Focus timer</h3>
+              <p>One tap and the countdown fills your whole screen.</p>
+            </article>
+            <article class="card rv">
+              <div class="art">
+                <svg viewBox="0 0 220 110">
+                  <g class="s"><path d="M40 20v70" /></g>
+                  <g>
+                    <circle cx="40" cy="24" r="6" fill="#F97316" />
+                    <circle cx="40" cy="55" r="6" fill="#d6d2c7" />
+                    <circle cx="40" cy="86" r="6" fill="#d6d2c7" />
+                  </g>
+                  <g class="s"><path d="M60 24h90M60 55h120M60 86h70" /></g>
+                </svg>
+              </div>
+              <h3>History</h3>
+              <p>
+                Look back at everything you added, finished or deleted, and
+                restore it.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec dark" id="focus">
+        <div class="wrap split">
+          <div class="rv">
+            <h2>Focus that takes over your screen</h2>
+            <p class="lead">
+              Pick a session length and press start. TaskFlow goes full screen,
+              counts down quietly and tells you when time is up. Distractions
+              can wait.
+            </p>
+            <a class="btn p lg" href="app.html?guest=1#timer">Try the timer</a>
+          </div>
+          <div class="rv">
+            <div class="clock">
+              <svg viewBox="0 0 200 200">
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="86"
+                  fill="none"
+                  stroke="#ffffff1f"
+                  stroke-width="8"
+                />
+                <circle
+                  id="dring"
+                  cx="100"
+                  cy="100"
+                  r="86"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                  stroke-dasharray="540.4"
+                  stroke-dashoffset="0"
+                  transform="rotate(-90 100 100)"
+                />
+              </svg>
+              <div class="t" id="dtime">25:00</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="history">
+        <div class="wrap split rev">
+          <div class="rv">
+            <div class="log" aria-hidden="true">
+              <div class="li">
+                <svg class="ico g"><use href="#i-check" /></svg
+                ><span>Completed "Finish calculus tutorial sheet"</span
+                ><small>10:42</small>
+              </div>
+              <div class="li">
+                <svg class="ico"><use href="#i-note" /></svg
+                ><span>Created note "Project ideas"</span><small>10:15</small>
+              </div>
+              <div class="li">
+                <svg class="ico"><use href="#i-timer" /></svg
+                ><span>Completed a 25 min focus session</span
+                ><small>09:50</small>
+              </div>
+              <div class="li">
+                <svg class="ico"><use href="#i-cal" /></svg
+                ><span>Added event "AMS meeting"</span><small>Yesterday</small>
+              </div>
+            </div>
+          </div>
+          <div class="rv">
+            <h2>A record of everything you do</h2>
+            <p class="lead">
+              Tasks, notes, events and timer sessions are logged with dates and
+              times. Search it, filter it, and restore anything you deleted by
+              mistake.
+            </p>
+            <a class="btn lg" href="login.html?mode=signup"
+              >Create your workspace</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="sec soft" id="install">
+        <div class="wrap">
+          <h2>Install it like a real app</h2>
+          <p class="lead">
+            No app store. Only the workspace installs, and it works on phone,
+            tablet and laptop, even offline.
+          </p>
+          <div class="steps">
+            <div class="card rv">
+              <span class="n">1</span>
+              <h3>Open the workspace</h3>
+              <p>Use Chrome, Edge or Safari.</p>
+            </div>
+            <div class="card rv">
+              <span class="n">2</span>
+              <h3>Tap Install app</h3>
+              <p>
+                It is in the sidebar. On iPhone use Share, then Add to Home
+                Screen.
+              </p>
+            </div>
+            <div class="card rv">
+              <span class="n">3</span>
+              <h3>Launch from your home screen</h3>
+              <p>It opens full screen with no browser bars.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="faq">
+        <div class="wrap narrow">
+          <h2>Frequently asked questions</h2>
+          <p class="lead">Short answers to the common ones.</p>
+          <details class="qa rv">
+            <summary>Is TaskFlow free?</summary>
+            <p>
+              Yes. You can use every feature without paying and without an
+              account.
+            </p>
+          </details>
+          <details class="qa rv">
+            <summary>Where is my data stored?</summary>
+            <p>
+              Guests: on your device only. Accounts: in your private TaskFlow account in the
+              cloud, plus a copy on each device you use, so it syncs between your phone and
+              computer. Only you can read it.
+            </p>
+          </details>
+          <details class="qa rv">
+            <summary>Will I lose my data if I clear my browser?</summary>
+            <p>
+              Yes, clearing site data removes it. Use Download my data on the
+              app's Help page to keep a backup file.
+            </p>
+          </details>
+          <details class="qa rv">
+            <summary>Does it work offline?</summary>
+            <p>Yes. After your first visit the app opens without internet.</p>
+          </details>
+          <details class="qa rv">
+            <summary>How do I install it?</summary>
+            <p>
+              Open the workspace, then use Install app in the sidebar or your
+              browser's install option. On iPhone, tap Share then Add to Home
+              Screen. Only the workspace is installed.
+            </p>
+          </details>
+          <details class="qa rv">
+            <summary>Do I need an account?</summary>
+            <p>
+              No. You can try everything as a guest. Create a free account to get a
+              profile photo, your own theme colour and sync between all your devices.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="sec soft" id="privacy">
+        <div class="wrap">
+          <h2>Your data stays yours</h2>
+          <p class="lead">Plain-language privacy, no fine print.</p>
+          <div class="grid">
+            <div class="card rv">
+              <div class="ic">
+                <svg class="ico"><use href="#i-phone" /></svg>
+              </div>
+              <h3>Private to you</h3>
+              <p>
+                Tasks, notes, events, drawings and history live in your browser.
+                We do not upload them.
+              </p>
+            </div>
+            <div class="card rv">
+              <div class="ic">
+                <svg class="ico"><use href="#i-check" /></svg>
+              </div>
+              <h3>No ads, no tracking</h3>
+              <p>
+                TaskFlow has no analytics or advertising scripts and does not
+                sell data.
+              </p>
+            </div>
+            <div class="card rv">
+              <div class="ic">
+                <svg class="ico"><use href="#i-hist" /></svg>
+              </div>
+              <h3>Export or delete anytime</h3>
+              <p>
+                Download everything as a JSON file, or delete your account and
+                data from the Help page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec band">
+        <div class="wrap">
+          <h2>Ready when you are</h2>
+          <p class="lead">Free to use. Your data stays private to you.</p>
+          <div class="cta">
+            <a class="btn p lg" href="login.html?mode=signup"
+              >Create your workspace</a
+            ><a class="btn lg ghost" href="app.html?guest=1">Try as guest</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap fgrid">
+        <div>
+          <span class="logo"
+            ><i
+              ><svg class="ico" fill="#fff" stroke="none">
+                <use href="#i-bolt" /></svg></i
+            >TaskFlow</span
+          >
+          <p>Plan, write and focus in one calm workspace.</p>
+        </div>
+        <div class="fl">
+          <a href="#features">Features</a><a href="#privacy">Privacy</a
+          ><a href="#faq">FAQ</a><a href="login.html?mode=signin">Sign in</a>
+        </div>
+      </div>
+      <div class="wrap copy">
+        &copy; <span id="yr">2026</span> TaskFlow. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const m = document.getElementById("menu");
+      document.getElementById("bg").onclick = () => m.classList.toggle("open");
+      m.querySelectorAll("a").forEach(
+        (a) => (a.onclick = () => m.classList.remove("open")),
+      );
+      if (JSON.parse(localStorage.getItem("tf_user") || "null"))
+        document
+          .querySelectorAll('a[href^="login"]')
+          .forEach((a) => (a.href = "app.html"));
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".rv").forEach((e, i) => {
+        e.style.transitionDelay = (i % 3) * 80 + "ms";
+        io.observe(e);
+      });
+      let s = 1500;
+      const C = 540.4,
+        pad = (n) => String(n).padStart(2, "0");
+      setInterval(() => {
+        s--;
+        if (s < 1470) s = 1500;
+        document.getElementById("dtime").textContent =
+          pad(Math.floor(s / 60)) + ":" + pad(s % 60);
+        document.getElementById("dring").style.strokeDashoffset =
+          (C * (1500 - s)) / 30;
+      }, 1000);
+      document.getElementById("yr").textContent = new Date().getFullYear();
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("sw.js");
+    </script>
+  </body>
+</html>

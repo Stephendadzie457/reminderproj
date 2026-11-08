@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>TaskFlow - Workspace</title>
+    <meta name="theme-color" content="#F97316" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="TaskFlow" />
+    <link rel="stylesheet" href="vendor/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="vendor/supabase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cloud.js"></script>
+    <script src="js/profile.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sb" id="sb" aria-label="Main navigation">
+        <div class="brand">
+          <span class="logo"
+            ><i><i data-lucide="zap" class="ico"></i></i>TaskFlow</span
+          ><button class="ib sbx" id="sbx" aria-label="Close menu">
+            <i data-lucide="x" class="ico"></i>
+          </button>
+        </div>
+        <button class="qa" id="qa">
+          <i data-lucide="plus" class="ico"></i>New to-do
+        </button>
+        <nav id="nav"></nav>
+        <div class="sbf">
+          <button class="nv" id="inst" hidden>
+            <i data-lucide="download" class="ico"></i><span>Install app</span>
+          </button>
+          <div class="uc">
+            <span class="av" id="av"></span>
+            <div class="ui"><b id="un"></b><small id="ue"></small></div>
+            <button class="ib" id="out" aria-label="Sign out" title="Sign out">
+              <i data-lucide="log-out" class="ico"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+      <div class="bd" id="bd"></div>
+      <div class="main">
+        <div class="top">
+          <button class="ib mb" id="mb" aria-label="Open menu">
+            <i data-lucide="menu" class="ico"></i>
+          </button>
+          <h2 id="tt"></h2>
+          <span class="sp"></span
+          ><button
+            class="ib"
+            id="sbtn"
+            aria-label="Search (Ctrl+K)"
+            title="Search (Ctrl+K)"
+          >
+            <i data-lucide="search" class="ico"></i>
+          </button>
+          <button class="ib" id="dkbtn" aria-label="Dark mode" title="Dark mode"><i data-lucide="moon" class="ico"></i></button>
+          <button class="ib" id="dkbtn" aria-label="Dark mode" title="Dark mode"></button>
+          <button class="ib pbtn" id="pbtn" hidden aria-haspopup="menu" aria-expanded="false" aria-label="Profile menu"></button>
+        </div>
+        <div class="view" id="v"></div>
+        <nav class="tabbar" id="tabbar" aria-label="Quick navigation"><button data-t="tasks" data-l="myday"><i data-lucide="sun" class="ico"></i><span>My Day</span></button><button data-t="tasks" data-l="all"><i data-lucide="circle-check" class="ico"></i><span>To-dos</span></button><button data-t="cal"><i data-lucide="calendar" class="ico"></i><span>Calendar</span></button><button data-t="notes"><i data-lucide="file-text" class="ico"></i><span>Notes</span></button><button id="tbm"><i data-lucide="ellipsis" class="ico"></i><span>More</span></button></nav>
+      </div>
+    </div>
+    <div class="fs" id="fs">
+      <div class="big" id="fb">25:00</div>
+      <div class="bar"><i id="fp" style="width: 0"></i></div>
+      <div class="ctl">
+        <button class="btn p" id="fpause">Pause</button
+        ><button class="btn" id="fexit">Exit full screen</button
+        ><button class="btn" id="fstop">Stop</button>
+      </div>
+    </div>
+    <div id="md"></div>
+    <div id="sr"></div>
+    <script src="vendor/dayjs.min.js"></script>
+    <script src="vendor/lucide.min.js"></script>
+    <script src="vendor/flatpickr.min.js"></script>
+    <script src="vendor/fuse.min.js"></script>
+    <script src="vendor/chart.umd.js"></script>
+    <script src="vendor/fullcalendar.min.js"></script>
+    <script src="vendor/tiptap.bundle.js"></script>
+    <script src="vendor/fabric.min.js"></script>
+    <script src="vendor/emoji-picker.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
